@@ -1,0 +1,127 @@
+print("How many pencils would you like to use:")
+while True:
+    i = input()
+    if (i.isdigit() and int(i) > 0):
+        break
+    elif (i.isdigit() and int(i) == 0):
+        print("The number of pencils should be positive")
+    else:
+        print("The number of pencils should be numeric")
+print("Who will be the first (John, Jack):")
+while True:
+    j = input()
+    if (j == 'John'):
+        bot = 'Jack'
+        break
+    elif (j == 'Jack'):
+        bot = j
+        break
+    else:
+        print("Choose between 'John' and 'Jack'")
+
+if j == "John":
+    a = int(i) * "|"
+    print(a)
+    while(int(i) != 0):
+        print(j, "'s turn:")
+        while True:
+            l = input()
+            if (l.isdigit()):
+                if int(l) in {1, 2, 3}:
+                    if int(l) <= int(i):
+                        break
+                    else:
+                        print("Too many pencils were taken")
+                else:
+                    print("Possible values: '1', '2', or '3'")
+            else:
+                print("Possible values: '1', '2', or '3'")
+        i = int(i)
+        l = int(l)
+        i -= l
+        if i == 0:
+            print(bot, "won!")
+            break
+        if i == 1:
+            print("|")
+            print(bot, "'s turn!")
+            print(1)
+            print(j, "won!")
+            break
+        a = '|'
+        print(i*a)
+    
+        print(bot, "'s turn!")
+        l = i%4
+        if l == 1:
+            i -= 1
+            print(1)
+            print(i*a)
+        elif l == 2:
+            i -= 1
+            print(1)
+            print(i*a)
+        elif l == 3:
+            i -= 2
+            print(2)
+            print(i*a)
+        else:
+            i -= 3
+            print(3)
+            print(i*a)
+        if i == 0:
+            print(j, "won!")
+            break
+else:
+    i = int(i)
+    j = "John"
+    while(int(i) != 0):
+        a = '|'
+        print(i*a)
+        print(bot, "'s turn!")
+        l = i%4
+        if l == 1:
+            i -= 1
+            print(1)
+            print(i*a)
+        elif l == 2:
+            i -= 1
+            print(1)
+            print(i*a)
+        elif l == 3:
+            i -= 2
+            print(2)
+            print(i*a)
+        else:
+            i -= 3
+            print(3)
+            print(i*a)
+        if i == 0:
+            print(j, "won!")
+            break
+    
+        print(j, "'s turn:")
+        while True:
+            l = input()
+            if (l.isdigit()):
+                if int(l) in {1, 2, 3}:
+                    if int(l) <= int(i):
+                        break
+                    else:
+                        print("Too many pencils were taken")
+                else:
+                    print("Possible values: '1', '2', or '3'")
+            else:
+                print("Possible values: '1', '2', or '3'")
+        i = int(i)
+        l = int(l)
+        i -= l
+        if i == 0:
+            print(bot, "won!")
+            break
+        if i == 1:
+            print("|")
+            print(bot, "'s turn!")
+            print(1)
+            print(j, "won!")
+            break
