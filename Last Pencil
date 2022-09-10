@@ -1,3 +1,4 @@
+import random
 print("How many pencils would you like to use:")
 while True:
     i = input()
@@ -18,17 +19,17 @@ while True:
         break
     else:
         print("Choose between 'John' and 'Jack'")
-
+i = int(i)
 if j == "John":
-    a = int(i) * "|"
+    a = i * "|"
     print(a)
-    while(int(i) != 0):
+    while(i != 0):
         print(j, "'s turn:")
         while True:
             l = input()
             if (l.isdigit()):
                 if int(l) in {1, 2, 3}:
-                    if int(l) <= int(i):
+                    if int(l) <= i:
                         break
                     else:
                         print("Too many pencils were taken")
@@ -36,7 +37,6 @@ if j == "John":
                     print("Possible values: '1', '2', or '3'")
             else:
                 print("Possible values: '1', '2', or '3'")
-        i = int(i)
         l = int(l)
         i -= l
         if i == 0:
@@ -54,8 +54,10 @@ if j == "John":
         print(bot, "'s turn!")
         l = i%4
         if l == 1:
-            i -= 1
-            print(1)
+            z = random.choice("123")
+            z = int(z)
+            print(z)
+            i -= z
             print(i*a)
         elif l == 2:
             i -= 1
@@ -73,17 +75,23 @@ if j == "John":
             print(j, "won!")
             break
 else:
-    i = int(i)
     j = "John"
-    while(int(i) != 0):
+    while(i != 0):
         a = '|'
         print(i*a)
         print(bot, "'s turn!")
         l = i%4
         if l == 1:
-            i -= 1
-            print(1)
-            print(i*a)
+            if i == 1:
+                i -= 1
+                print(1)
+                print(i*a)
+            else:
+                choice = [1, 2, 3]
+                z = random.choice(choice)
+                i -= z
+                print(z)
+                print(i*a)
         elif l == 2:
             i -= 1
             print(1)
@@ -105,7 +113,7 @@ else:
             l = input()
             if (l.isdigit()):
                 if int(l) in {1, 2, 3}:
-                    if int(l) <= int(i):
+                    if int(l) <= i:
                         break
                     else:
                         print("Too many pencils were taken")
@@ -113,7 +121,6 @@ else:
                     print("Possible values: '1', '2', or '3'")
             else:
                 print("Possible values: '1', '2', or '3'")
-        i = int(i)
         l = int(l)
         i -= l
         if i == 0:
