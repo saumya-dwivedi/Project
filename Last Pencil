@@ -1,13 +1,23 @@
 import random
-print("How many pencils would you like to use:")
+print('''RULES:
+    1. The one who draws last pencil looses!
+    2. You can only draw 1, 2 or 3 pencils at a time.
+    3. You can\'t draw more pencils than available!
+    4. You are \'John\' and \'Jack\' is bot!
+    
+    Let the game begin!
+    ''')
+print("How many pencils would you like to use: ", end = "")
 while True:
     i = input()
     if (i.isdigit() and int(i) > 0):
         break
     elif (i.isdigit() and int(i) == 0):
-        print("The number of pencils should be positive")
+        print("The number of pencils should be positive!")
+        print("How many pencils would you like to use: ", end = "")
     else:
-        print("The number of pencils should be numeric")
+        print("The number of pencils should be numeric!")
+        print("How many pencils would you like to use: ", end = "")
 print("Who will be the first (John, Jack):")
 while True:
     j = input()
@@ -18,7 +28,7 @@ while True:
         bot = j
         break
     else:
-        print("Choose between 'John' and 'Jack'")
+        print("Choose between 'John' and 'Jack': ", end = "")
 i = int(i)
 if j == "John":
     a = i * "|"
@@ -32,11 +42,11 @@ if j == "John":
                     if int(l) <= i:
                         break
                     else:
-                        print("Too many pencils were taken")
+                        print("Too many pencils were taken!")
                 else:
-                    print("Possible values: '1', '2', or '3'")
+                    print("Possible values: '1', '2', or '3'.")
             else:
-                print("Possible values: '1', '2', or '3'")
+                print("Possible values: '1', '2', or '3'.")
         l = int(l)
         i -= l
         if i == 0:
@@ -116,11 +126,11 @@ else:
                     if int(l) <= i:
                         break
                     else:
-                        print("Too many pencils were taken")
+                        print("Too many pencils were taken!")
                 else:
-                    print("Possible values: '1', '2', or '3'")
+                    print("Possible values: '1', '2', or '3'.")
             else:
-                print("Possible values: '1', '2', or '3'")
+                print("Possible values: '1', '2', or '3'.")
         l = int(l)
         i -= l
         if i == 0:
